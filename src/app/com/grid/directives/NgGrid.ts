@@ -65,7 +65,7 @@ export class NgGrid implements OnInit, DoCheck, OnDestroy {
 	private _placeholderRef: ComponentRef<NgGridPlaceholder> = null;
 	private _fixToGrid: boolean = false;
 	private _autoResize: boolean = false;
-	//private _differ: KeyValueDiffer;
+	private _differ: KeyValueDiffer<string,string>;
 	private _destroyed: boolean = false;
 	private _maintainRatio: boolean = false;
 	private _aspectRatio: number;
@@ -104,9 +104,9 @@ export class NgGrid implements OnInit, DoCheck, OnDestroy {
 	set config(v: NgGridConfig) {
 		this.setConfig(v);
 
-		// if (this._differ == null && v != null) {
-		// 	this._differ = this._differs.find(this._config).create(null);
-		// }
+		if (this._differ == null && v != null) {
+			this._differ = this._differs.find(this._config).create(null);
+		}
 	}
 
 	//	Constructor
@@ -298,7 +298,7 @@ export class NgGrid implements OnInit, DoCheck, OnDestroy {
 
 	public ngDoCheck(): boolean {
 		// if (this._differ != null) {
-		// 	var changes = this._differ.diff(this._config);
+		// 	var changes = this._config;
 
 		// 	if (changes != null) {
 		// 		this._applyChanges(changes);

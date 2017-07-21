@@ -28,7 +28,7 @@ export class PolygonManager {
       visible: path.visible,
       zIndex: path.zIndex,
     });
-    //this._polygons.set(path, polygonPromise);
+    this._polygons.set(path, polygonPromise);
   }
 
   updatePolygon(polygon: SebmGoogleMapPolygon): Promise<void> {

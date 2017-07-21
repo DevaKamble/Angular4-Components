@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angulartypescript.com - Angular 2 UI Framework - Components';
+  title = 'City List';
 }

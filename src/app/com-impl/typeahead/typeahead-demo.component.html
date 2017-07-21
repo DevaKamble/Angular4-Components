@@ -1,14 +1,14 @@
 <div class='container-fluid'>
   <!-- Static arrays -->
-  <h4>Static arrays</h4>
+  <!--<h4>Static arrays</h4>
   <pre class="card card-block card-header">Model: {{selected | json}}</pre>
   <input [(ngModel)]="selected"
          [typeahead]="states"
          (typeaheadOnSelect)="typeaheadOnSelect($event)"
-         class="form-control">
+         class="form-control">-->
 
   <!-- Custom item template -->
-  <template #customItemTemplate let-model="item" let-index="index">
+  <!--<template #customItemTemplate let-model="item" let-index="index">
     <h5>This is: {{model | json}} Index: {{ index }}</h5>
   </template>
   <h4>Custom item template</h4>
@@ -18,29 +18,26 @@
          [typeaheadItemTemplate]="customItemTemplate"
          [typeaheadOptionField]="'name'"
          (typeaheadOnSelect)="typeaheadOnSelect($event)"
-         class="form-control">
+         class="form-control">-->
 
   <!-- Asynchronous results -->
-  <h4>Asynchronous results</h4>
-  <pre class="card card-block card-header">Model: {{asyncSelected | json}}</pre>
-  <input [(ngModel)]="asyncSelected"
-         [typeahead]="dataSource"
-         (typeaheadLoading)="changeTypeaheadLoading($event)"
-         (typeaheadNoResults)="changeTypeaheadNoResults($event)"
-         (typeaheadOnSelect)="typeaheadOnSelect($event)"
-         [typeaheadOptionsLimit]="7"
-         [typeaheadOptionField]="'name'"
-         placeholder="Locations loaded with timeout"
-         class="form-control">
-  <div *ngIf="typeaheadLoading===true">
-    <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+  <div class="row">
+    <div class="col-md-2">
+      <h4>Select City</h4>
+      <pre class="card card-block card-header">Selected City: {{asyncSelected | json}}</pre>
+      <input [(ngModel)]="asyncSelected" [typeahead]="dataSource" (typeaheadLoading)="changeTypeaheadLoading($event)" (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+        (typeaheadOnSelect)="typeaheadOnSelect($event)" [typeaheadOptionsLimit]="7" [typeaheadOptionField]="'fields.city_en'" placeholder="Locations loaded with timeout"
+        class="form-control">
+      <div *ngIf="typeaheadLoading===true">
+        <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+      </div>
+      <div *ngIf="typeaheadNoResults===true" class="" style="">
+        <i class="glyphicon glyphicon-remove"></i> No Results Found
+      </div>
+    </div>
   </div>
-  <div *ngIf="typeaheadNoResults===true" class="" style="">
-    <i class="glyphicon glyphicon-remove"></i> No Results Found
-  </div>
-
   <!--Typeahead inside a form-->
-  <h4>Typeahead inside a form</h4>
+  <!--<h4>Typeahead inside a form</h4>
   <pre class="card card-block card-header">Model: {{myForm.value.state | json}}</pre>
   <form [formGroup]="myForm">
     <input formControlName="state"
@@ -51,7 +48,7 @@
            [typeaheadMinLength]="0"
            placeholder="Typeahead inside a form"
            class="form-control">
-  </form>
+  </form>-->
 
 
 </div>

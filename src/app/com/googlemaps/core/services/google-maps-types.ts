@@ -243,12 +243,14 @@ export interface Polyline extends MVCObject {
   getEditable(): boolean;
   getMap(): GoogleMap;
   getPath(): Array<LatLng>;
+  getPaths(): Array<Array<LatLng>>;
   getVisible(): boolean;
   setDraggable(draggable: boolean): void;
   setEditable(editable: boolean): void;
   setMap(map: GoogleMap): void;
   setOptions(options: PolylineOptions): void;
   setPath(path: Array<LatLng|LatLngLiteral>): void;
+  setPaths(paths: Array<Array<LatLng|LatLngLiteral>>|Array<LatLng|LatLngLiteral>): void;
   setVisible(visible: boolean): void;
 }
 

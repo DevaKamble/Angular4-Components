@@ -131,7 +131,7 @@ import { FileUploadDemoComponent } from './com-impl/fileupload/fileupload-demo.c
     PaginationModule,
     NgGridModule,//grid
     AgmCoreModule.forRoot({
-      apiKey: 'Your - > Google-MAPS-API-KEY - here' //google maps api key
+      apiKey: 'AIzaSyCE8KTR0O2mrBs5WV-hgd28fxvzXxaqMxY' //google maps api key
     }),//google maps
    // 
 
